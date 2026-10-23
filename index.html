@@ -3,28 +3,192 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>Parça Cini - E-posta Doğrulandı</title>
+  <meta name="theme-color" content="#142b3b" />
+  <meta name="description" content="Parça Cini e-posta adresi doğrulama sonucu." />
+  <title>Parça Cini | E-posta Adresiniz Doğrulandı</title>
   <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7fb;color:#1f2937;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
-    .card{width:min(560px,100%);background:#fff;border-radius:24px;padding:36px;box-shadow:0 18px 60px rgba(0,0,0,.10);text-align:center}
-    .logo{font-size:30px;font-weight:800;letter-spacing:.2px;margin-bottom:18px}
-    .check{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;background:#ecfdf5;font-size:42px}
-    h1{font-size:26px;margin:0 0 12px}
-    p{font-size:16px;line-height:1.6;margin:0 0 24px;color:#4b5563}
-    .btn{display:inline-block;width:100%;padding:15px 20px;border-radius:14px;background:#111827;color:#fff;text-decoration:none;font-weight:700;font-size:16px}
-    .note{margin-top:18px;font-size:13px;color:#6b7280}
+    :root {
+      color-scheme: light;
+      --navy: #142b3b;
+      --red: #e23e43;
+      --background: #f2f4f7;
+      --body: #263443;
+      --muted: #697586;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 14px;
+      background: var(--background);
+      color: var(--body);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 16px 44px rgba(20, 43, 59, 0.11);
+    }
+
+    .header {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 32px 20px 30px;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span { color: #ff5757; }
+
+    .tagline {
+      margin: 10px 0 0;
+      color: #cfdae2;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .content {
+      padding: 38px 34px 37px;
+      text-align: center;
+    }
+
+    .check {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #e8faf0;
+      color: #15734d;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: 750;
+      line-height: 1.32;
+    }
+
+    .description {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin: 28px 0 0;
+      padding: 16px 20px;
+      border-radius: 9px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background-color .18s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible { background: #c92f37; }
+
+    .button:focus-visible {
+      outline: 3px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .note {
+      margin: 19px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 23px 20px;
+      border-top: 1px solid #e8edf2;
+      background: #f7f9fb;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .footer-note {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 14px 10px; }
+      .card { border-radius: 13px; }
+      .header { padding: 27px 16px; }
+      .brand { font-size: 27px; }
+      .content { padding: 32px 22px; }
+      h1 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button { transition: none; }
+    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="logo">Parça Cini</div>
-    <div class="check">✓</div>
-    <h1>E-posta adresiniz doğrulandı</h1>
-    <p>Hesabınız başarıyla doğrulandı. Parça Cini uygulamasına dönerek giriş yapabilirsiniz.</p>
-    <a class="btn" href="parcaciniapp://auth/callback">Parça Cini'yi Aç</a>
-    <div class="note">Uygulama bu cihazda kurulu değilse bu sayfayı kapatıp Parça Cini'yi açabilirsiniz.</div>
+  <main class="card" aria-labelledby="status-title">
+    <header class="header">
+      <div class="brand">PARÇA <span>CİNİ</span></div>
+      <p class="tagline">Motosiklet Yedek Parça Platformu</p>
+    </header>
+
+    <section class="content">
+      <div class="check" role="img" aria-label="Başarılı">&#10003;</div>
+      <h1 id="status-title">E-posta Adresiniz Doğrulandı</h1>
+      <p class="description">
+        Hesabınız başarıyla doğrulandı. Parça Cini uygulamasına
+        dönerek giriş yapabilirsiniz.
+      </p>
+      <a class="button" href="parcaciniapp://auth/callback">Uygulamaya Dön</a>
+      <p class="note">
+        Uygulama bu cihazda kurulu değilse bu sayfayı kapatabilirsiniz.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p class="footer-brand">PARÇA CİNİ</p>
+      <p class="footer-note">Motosiklet Yedek Parça Platformu</p>
+    </footer>
   </main>
 </body>
 </html>
